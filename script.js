@@ -1,27 +1,33 @@
-let taskList = JSON.parse(localStorage.getItem("tasks")) || [];
+let products = [
+  { name: "T-Shirt", category: "Clothing", price: 300 },
+  { name: "Jeans", category: "Clothing", price: 800 },
+  { name: "Headphones", category: "Electronics", price: 2000 },
+  { name: "Mouse", category: "Electronics", price: 500 },
+];
 
-function showTasks() {
-  let list = document.getElementById("taskList");
-  list.innerHTML = "";
-  taskList.forEach((task, index) => {
-    list.innerHTML += `<li>${task} <button onclick="deleteTask(${index})">❌</button></li>`;
+function display(list) {
+  let box = document.getElementById("productList");
+  box.innerHTML = "";
+  list.forEach(p => {
+    box.innerHTML += `<div class="card">
+       <h3>${p.name}</h3>
+       <p>${p.category}</p>
+       <p>₹${p.price}</p>
+     </div>`;
   });
 }
 
-function addTask() {
-  let input = document.getElementById("taskInput");
-  if (input.value.trim() !== "") {
-    taskList.push(input.value);
-    localStorage.setItem("tasks", JSON.stringify(taskList));
-    input.value = "";
-    showTasks();
-  }
+function filterProducts() {
+  let value = document.getElementById("filter").value;
+  let filtered = value === "all" ? products : products.filter(p => p.category === value);
+  display(filtered);
 }
 
-function deleteTask(index) {
-  taskList.splice(index, 1);
-  localStorage.setItem("tasks", JSON.stringify(taskList));
-  showTasks();
+function sortProducts() {
+  let value = document.getElementById("sort").value;
+  if (value === "low-high") products.sort((a,b) => a.price - b.price);
+  else if (value === "high-low") products.sort((a,b) => b.price - a.price);
+  display(products);
 }
 
-showTasks();
+display(products);

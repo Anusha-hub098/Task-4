@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>To-Do App</title>
+  <title>Product Page</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>My To-Do List</h1>
-  <input id="taskInput" placeholder="Enter task">
-  <button onclick="addTask()">Add</button>
-  <ul id="taskList"></ul>
+  <h1>Products</h1>
+
+  <select id="filter" onchange="filterProducts()">
+    <option value="all">All</option>
+    <option value="Clothing">Clothing</option>
+    <option value="Electronics">Electronics</option>
+  </select>
+
+  <select id="sort" onchange="sortProducts()">
+    <option value="default">Default</option>
+    <option value="low-high">Price Low-High</option>
+    <option value="high-low">Price High-Low</option>
+  </select>
+
+  <div id="productList"></div>
 
   <script src="script.js"></script>
 </body>
