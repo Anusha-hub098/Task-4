@@ -1,27 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Portfolio</title>
+  <title>To-Do App</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Hi, I'm Anusha 👋</h1>
-    <p>Frontend Developer | Beginner in Web Development</p>
-  </header>
-
-  <section>
-    <h2>About Me</h2>
-    <p>I'm learning HTML, CSS, and JavaScript and building projects.</p>
-  </section>
-
-  <section>
-    <h2>My Projects</h2>
-    <button onclick="openTodo()">To-Do App</button>
-    <button onclick="openProduct()">Product Page</button>
-  </section>
-
-  <footer>© 2025 Anusha Portfolio</footer>
+  <h1>My To-Do List</h1>
+  <input id="taskInput" placeholder="Enter task">
+  <button onclick="addTask()">Add</button>
+  <ul id="taskList"></ul>
 
   <script src="script.js"></script>
 </body>
