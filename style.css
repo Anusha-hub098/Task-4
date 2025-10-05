@@ -1,0 +1,34 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  margin: 0;
+  background: #f7f7f7;
+}
+header {
+  background: teal;
+  color: white;
+  padding: 20px;
+}
+section {
+  background: white;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+button {
+  background: teal;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: darkcyan;
+}
+footer {
+  background: #222;
+  color: white;
+  padding: 10px;
+}
